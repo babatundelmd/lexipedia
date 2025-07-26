@@ -1,6 +1,15 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import MainLayout from 'layouts';
+
 const App = () => {
-  // Fowo: Start working here
-  return <p>Lexipedia</p>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<MainLayout />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;
