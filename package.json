@@ -14,7 +14,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sync-dev": "git fetch upstream && git checkout development && git merge upstream/development && git push origin development"
   },
   "eslintConfig": {
     "extends": [
