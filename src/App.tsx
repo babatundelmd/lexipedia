@@ -1,12 +1,20 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import ROUTES from 'routes';
 import MainLayout from 'layouts';
+import WordInfo from 'pages/WordInfo';
 
 const App = () => {
+  const { HOME, HISTORY, WORD_INFO } = ROUTES;
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<MainLayout />}></Route>
+        <Route element={<MainLayout />}>
+          <Route path={HOME} element={<></>} /> {/* Fowo's Searchbar Page component */}
+          <Route path={HISTORY} element={<></>} />
+          <Route path={WORD_INFO} element={<WordInfo />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -7,7 +7,7 @@ const MainLayout = () => {
 
   return (
     <main>
-      <header>
+      <header className='h-16 px-8 flex items-center justify-between border'>
         <Link to={HOME} className='flex gap-2'>
           {/* TODO: Place Lexipedia Logo in img src */}
           <img src='' alt='Lexipedia' />

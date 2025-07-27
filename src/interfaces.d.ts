@@ -1,3 +1,11 @@
+interface AlertProps {
+  msg: string;
+  zIndex?: string;
+  bgColor?: string;
+  duration?: number;
+  textColor?: string;
+}
+
 interface Definition {
   example?: string;
   synonyms: string[];
@@ -6,7 +14,7 @@ interface Definition {
 }
 
 interface Meaning {
-  antonyms: [];
+  antonyms: string[];
   synonyms: string[];
   partOfSpeech: string;
   definitions: Definition[];
@@ -24,10 +32,16 @@ interface Phonetic {
   sourceUrl?: string;
 }
 
-interface ReadOnly<WordInfo> {
+interface WordInfo {
   word: string;
   license: License;
   meanings: Meaning[];
   sourceUrls: string[];
   phonetics: Phonetic[];
+}
+
+interface ErrorAPI {
+  title: string;
+  message: string;
+  resolution: string;
 }
