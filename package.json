@@ -1,46 +1,34 @@
 {
   "name": "lexipedia",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
+    "@tailwindcss/vite": "^4.1.11",
     "axios": "^1.11.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-icons": "^4.10.1",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.7.1",
-    "react-scripts": "5.0.1",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^4.9.5"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "sync-dev": "git fetch upstream && git checkout development && git merge upstream/development && git push origin development"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6"
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4"
   }
 }

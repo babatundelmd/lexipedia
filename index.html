@@ -2,9 +2,7 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Lexipedia is a sleek language app that offers definitions, synonyms, antonyms, and word origins—perfect for anyone looking to boost their vocabulary."
@@ -13,12 +11,18 @@
       name="keywords"
       content="vocabulary, english, word, synonyms, antonyms, word, words, origin, definitions, meaning"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-title" content="Lexipedia" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>Lexipedia</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
