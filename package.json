@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync-dev": "git fetch upstream && git checkout development && git merge upstream/development && git push origin development"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
