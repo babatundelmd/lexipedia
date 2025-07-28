@@ -1,33 +1,27 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Check here: https://tailwindcss.com/docs for full documentation on TailwindCSS 4 */
-/* Check here: https://tailwindcss.com/docs/theme for full documentation on TailwindCSS 4 Themes */
+* {
+  list-style: none;
+}
 
-:root {
+body {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Times New Roman', Cambria, Cochin, Georgia, Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a,
-a *,
 button,
-button *,
 input:is([type='submit'], [type='checkbox']) {
   @apply cursor-pointer;
 }
 
-@theme {
-  --color-primary: #fef2f2; /* TODO: Should be changed later on */
-  --color-secondary: #fbf9f1; /* TODO: Should be changed later on */
-
-  --radius-half: 50%;
+:is(a, button) * {
+  @apply cursor-[inherit];
 }

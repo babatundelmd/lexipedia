@@ -1,16 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Search from './pages/Search';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import ROUTES from 'routes';
+import MainLayout from 'layouts';
+import WordInfo from 'pages/WordInfo';
 
 const App = () => {
+  const { HOME, HISTORY, WORD_INFO } = ROUTES;
+
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Search />} />
-        {/* Optional: keep this if you want /search to also work */}
-        <Route path="/search" element={<Search />} />
+        <Route element={<MainLayout />}>
+          <Route path={HOME} element={<></>} /> {/* Fowo's Searchbar Page component */}
+          <Route path={HISTORY} element={<></>} />
+          <Route path={WORD_INFO} element={<WordInfo />} />
+        </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
