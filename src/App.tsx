@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import ROUTES from 'routes';
-import MainLayout from 'layouts';
-import WordInfo from 'pages/WordInfo';
+import ROUTES from './routes';
+import MainLayout from './layouts';
+import WordInfo from './pages/WordInfo';
 
 const App = () => {
   const { HOME, HISTORY, WORD_INFO } = ROUTES;

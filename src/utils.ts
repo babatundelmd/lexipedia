@@ -22,7 +22,7 @@ export const showAlert = ({
     'fixed',
     'w-max',
     'left-1/2',
-    'z-[9999]',
+    'z-9999',
     'text-base',
     'shadow-lg',
     'rounded-md',
