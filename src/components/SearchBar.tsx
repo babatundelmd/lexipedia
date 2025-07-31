@@ -8,6 +8,7 @@ const SearchBar: React.FC<Props> = ({onSearch}) =>{
     const [input, setInput] = useState('');
 
    const handleSubmit = () => {
+   // console.log('SearchBar clicked:', input);
     if (!input.trim()) return;
     onSearch(input.trim());
   };
@@ -20,7 +21,7 @@ const SearchBar: React.FC<Props> = ({onSearch}) =>{
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Enter a word..."
-          className="w-full p-3 mb-4 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 mb-4 text-black bg-amber-50 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button
           onClick={handleSubmit}
