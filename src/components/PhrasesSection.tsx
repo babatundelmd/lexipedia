@@ -35,7 +35,7 @@ const PhrasesSection = ({
       <div
         className={`mb-4 ${
           isLoading
-            ? "w-16 h-5 bg-content rounded delay-300 skeleton-shimmer"
+            ? "w-16 h-5  rounded delay-300 skeleton-shimmer"
             : "text-lg font-bold text-white"
         }`}
       >
@@ -47,10 +47,10 @@ const PhrasesSection = ({
             .fill(null)
             .map((_, index) => (
               <div className="mb-6" key={index}>
-                <div className="w-32 h-4 bg-content rounded mb-2 delay-300 skeleton-shimmer"></div>
-                <div className="w-full h-3 bg-content rounded mb-1 delay-400 skeleton-shimmer"></div>
-                <div className="w-3/4 h-3 bg-content rounded mb-1 delay-500 skeleton-shimmer"></div>
-                <div className="w-1/2 h-3 bg-content rounded delay-600 skeleton-shimmer"></div>
+                <div className="w-32 h-4  rounded mb-2 delay-300 skeleton-shimmer"></div>
+                <div className="w-full h-3 rounded mb-1 delay-400 skeleton-shimmer"></div>
+                <div className="w-3/4 h-3 rounded mb-1 delay-500 skeleton-shimmer"></div>
+                <div className="w-1/2 h-3 rounded delay-600 skeleton-shimmer"></div>
               </div>
             ))
         : phrases.map((item, index) => (

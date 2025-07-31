@@ -140,7 +140,11 @@ const DefinitionCard = ({
 }: DefinitionCardProps) => {
   return (
     <div>
-      <div className="mx-6 rounded-lg p-6 border bg-[#141414]">
+      <div
+        className={`mx-6 rounded-lg p-6 border ${
+          isLoading ? "" : "bg-[#141414]"
+        } `}
+      >
         {/* Parts of speech section */}
         <div className="mb-4">
           {isLoading ? (

@@ -17,14 +17,14 @@ const EtymologySection = ({
   return (
     <div
       className={`p-6 m-6 border rounded-lg shadow-md ${
-        isLoading ? "" : "bg-[#141414] "
+        isLoading ? " " : "bg-[#141414] "
       }`}
     >
       {/* Title/label section */}
       <div
         className={`mb-4 ${
           isLoading
-            ? "w-12 h-5 bg-content rounded skeleton-shimmer delay-100"
+            ? "w-12 h-5 rounded skeleton-shimmer delay-100"
             : "text-sm font-semibold text-white"
         }`}
       >
@@ -36,7 +36,7 @@ const EtymologySection = ({
         <div
           className={`${
             isLoading
-              ? "w-full h-3 bg-content rounded skeleton-shimmer delay-200"
+              ? "w-full h-3 rounded skeleton-shimmer delay-200"
               : "text-white text-sm leading-relaxed"
           }`}
         >
@@ -46,9 +46,9 @@ const EtymologySection = ({
         {/* Additional placeholder lines when loading */}
         {isLoading && (
           <>
-            <div className="w-5/6 h-3 bg-content rounded skeleton-shimmer delay-300"></div>
-            <div className="w-3/4 h-3 bg-content rounded skeleton-shimmer delay-400"></div>
-            <div className="w-1/2 h-3 bg-content rounded skeleton-shimmer delay-500"></div>
+            <div className="w-5/6 h-3 rounded skeleton-shimmer delay-300"></div>
+            <div className="w-3/4 h-3  rounded skeleton-shimmer delay-400"></div>
+            <div className="w-1/2 h-3  rounded skeleton-shimmer delay-500"></div>
           </>
         )}
       </div>
