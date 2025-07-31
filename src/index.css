@@ -1,19 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 * {
   list-style: none;
 }
 
-body {
+:root {
+  @apply font-serif;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Times New Roman', Cambria, Cochin, Georgia, Times, serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --color-primary: '#fef2f2'; /* TODO: Should be changed later on */
+  --color-secondary: '#fbf9f1'; /* TODO: Should be changed later on */
 }
 
 a,

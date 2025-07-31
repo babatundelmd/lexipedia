@@ -5,9 +5,9 @@ import { HiSpeakerXMark } from 'react-icons/hi2';
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
-import ROUTES from 'routes';
-import { showAlert } from 'utils';
-import Lexicals from 'components/Lexicals';
+import ROUTES from '../routes';
+import { showAlert } from '../utils';
+import Lexicals from '../components/Lexicals';
 
 const WordInfo = () => {
   const { HOME } = ROUTES;
@@ -116,13 +116,13 @@ const WordInfo = () => {
 
   return (
     <div className='min-h-screen grid grid-cols-[20%_80%] grid-rows-[300px_1fr]'>
-      <section className='relative px-8 h-[300px] flex items-center justify-between border-b col-start-1 col-end-3'>
+      <section className='relative px-8 h-75 flex items-center justify-between border-b col-start-1 col-end-3'>
         <h1 className='text-8xl px-10 capitalize'>{wordInfo.word}</h1>
 
         <button
           onClick={playWordSound}
           disabled={!specifiedPhonetics.audio}
-          className='group relative flex gap-4 items-center justify-center py-4 px-8 rounded-full border disabled:cursor-not-allowed'
+          className='group relative flex gap-4 items-center justify-center py-4 px-8 rounded-full border disabled:!cursor-not-allowed'
         >
           {specifiedPhonetics.audio ? null : (
             <span className='shadow-md py-2 px-4 whitespace-nowrap opacity-0 absolute -bottom-12 left-1/2 -translate-x-1/2 bg-white rounded-full duration-300 border group-hover:opacity-100'>

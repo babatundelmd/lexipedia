@@ -1,6 +1,7 @@
 import { Outlet, Link } from 'react-router-dom';
 
-import ROUTES from 'routes';
+import ROUTES from '../routes';
+import logo from '../assets/lexipedia.png';
 
 const MainLayout = () => {
   const { HISTORY, HOME } = ROUTES;
@@ -8,9 +9,8 @@ const MainLayout = () => {
   return (
     <main>
       <header className='h-16 px-8 flex items-center justify-between border'>
-        <Link to={HOME} className='flex gap-2'>
-          {/* TODO: Place Lexipedia Logo in img src */}
-          <img src='' alt='Lexipedia' />
+        <Link to={HOME} className='flex items-center gap-2'>
+          <img src={logo} alt='Lexipedia' className='w-10 h-10 rounded-full bg-white' />
           <span>Lexipedia</span>
         </Link>
 
