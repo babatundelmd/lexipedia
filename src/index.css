@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 * {
   list-style: none;
@@ -6,7 +6,6 @@
 
 :root {
   @apply font-serif;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,16 +13,41 @@
 }
 
 @theme {
-  --color-primary: '#fef2f2'; /* TODO: Should be changed later on */
-  --color-secondary: '#fbf9f1'; /* TODO: Should be changed later on */
+  --color-primary: "#fef2f2"; /* TODO: Should be changed later on */
+  --color-secondary: "#fbf9f1"; /* TODO: Should be changed later on */
+  --color-content: "#141414"; /* TODO: Should be changed later on */
+}
+
+
+@keyframes shimmer-animation {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 a,
 button,
-input:is([type='submit'], [type='checkbox']) {
+input:is([type="submit"], [type="checkbox"]) {
   @apply cursor-pointer;
 }
 
 :is(a, button) * {
   @apply cursor-[inherit];
+}
+
+@layer components {
+  .skeleton-shimmer {
+    @apply bg-[hsl(0,0%,90%)] bg-no-repeat;
+    background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer-animation 2s ease-in-out infinite;
+  }
 }
