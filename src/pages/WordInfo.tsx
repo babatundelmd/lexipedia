@@ -82,7 +82,7 @@ const WordInfo = () => {
         duration: 5000,
         msg: error.response?.data.title || 'An error has occured. Please try again',
       });
-      window.history.back();
+      navigate(-1);
     }
   };
 
@@ -115,7 +115,7 @@ const WordInfo = () => {
   };
 
   return (
-    <div className='min-h-screen grid grid-cols-[20%_80%] grid-rows-[300px_1fr]'>
+    <div className='min-h-screen grid grid-cols-[20%_80%] grid-rows-[300px_1fr] text-primary'>
       <section className='relative px-8 h-75 flex items-center justify-between border-b col-start-1 col-end-3'>
         <h1 className='text-8xl px-10 capitalize'>{wordInfo.word}</h1>
 
@@ -142,8 +142,9 @@ const WordInfo = () => {
         </button>
 
         <Link
+          target='_blank'
           to={wordInfo.license.url}
-          className='absolute bottom-4 right-8 text-sm text-[rgba(255,255,255,0.7)] duration-300 hover:text-white hover:underline'
+          className='absolute bottom-4 right-8 text-sm text-secondary hover:underline'
         >
           {wordInfo.license.name}
         </Link>
