@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 * {
   list-style: none;
@@ -13,11 +13,10 @@
 }
 
 @theme {
-  --color-primary: "#fef2f2"; /* TODO: Should be changed later on */
-  --color-secondary: "#fbf9f1"; /* TODO: Should be changed later on */
-  --color-content: "#141414"; /* TODO: Should be changed later on */
+  --color-primary: '#fef2f2'; /* TODO: Should be changed later on */
+  --color-secondary: '#fbf9f1'; /* TODO: Should be changed later on */
+  --color-content: '#141414'; /* TODO: Should be changed later on */
 }
-
 
 @keyframes shimmer-animation {
   0% {
@@ -30,7 +29,7 @@
 
 a,
 button,
-input:is([type="submit"], [type="checkbox"]) {
+input:is([type='submit'], [type='checkbox']) {
   @apply cursor-pointer;
 }
 
