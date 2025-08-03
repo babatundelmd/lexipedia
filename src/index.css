@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 * {
   list-style: none;
@@ -13,11 +13,10 @@
 }
 
 @theme {
-  --color-primary: "#fef2f2"; /* TODO: Should be changed later on */
-  --color-secondary: "#fbf9f1"; /* TODO: Should be changed later on */
-  --color-content: "#141414"; /* TODO: Should be changed later on */
+  --color-primary: #0a2f46;
+  --color-secondary: #748289;
+  --color-content: #141414; /* TODO: Should be changed later on */
 }
-
 
 @keyframes shimmer-animation {
   0% {
@@ -28,9 +27,21 @@
   }
 }
 
+.btn {
+  @apply flex gap-2.5 items-center justify-center bg-primary text-white rounded-full whitespace-nowrap px-4.5 py-2 duration-200 active:scale-95;
+}
+
+.nav-link {
+  @apply text-primary px-4 py-1 rounded duration-400;
+}
+
+.nav-link.selected {
+  @apply text-white bg-primary;
+}
+
 a,
 button,
-input:is([type="submit"], [type="checkbox"]) {
+input:is([type='submit'], [type='checkbox']) {
   @apply cursor-pointer;
 }
 

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import ROUTES from './routes';
 import MainLayout from './layouts';
+import History from './pages/History';
 import WordInfo from './pages/WordInfo';
 import Search from './pages/Search';
 
@@ -12,8 +13,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path={HOME} element={<Search />} /> {/* Fowo's Searchbar Page component */}
-          <Route path={HISTORY} element={<></>} />
+          <Route path={HOME} element={<></>} /> {/* Fowo's Searchbar Page component */}
+          <Route path={HISTORY} element={<History />} />
           <Route path={WORD_INFO} element={<WordInfo />} />
         </Route>
       </Routes>
