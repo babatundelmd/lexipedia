@@ -13,7 +13,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path={HOME} element={<></>} /> {/* Fowo's Searchbar Page component */}
+          <Route path={HOME} element={<Search />} /> {/* Fowo's Searchbar Page component */}
           <Route path={HISTORY} element={<History />} />
           <Route path={WORD_INFO} element={<WordInfo />} />
         </Route>
