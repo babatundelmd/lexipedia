@@ -5,14 +5,12 @@ import ROUTES from '../routes';
 interface Props {
   title: string;
   lexicals: string[];
-  clearWordInfo: () => void;
 }
 
-const Lexicals: React.FC<Props> = ({ clearWordInfo, lexicals, title }) => {
+const Lexicals: React.FC<Props> = ({ lexicals, title }) => {
   const navigate = useNavigate();
 
   const onLexicalClick = (lexical: string) => {
-    clearWordInfo();
     navigate(`${ROUTES.WORD_INFO.replace(':word', lexical)}`);
   };
 
@@ -24,7 +22,7 @@ const Lexicals: React.FC<Props> = ({ clearWordInfo, lexicals, title }) => {
           <p
             key={index}
             onClick={() => onLexicalClick(lexical)}
-            className="inline cursor-pointer text-blue-600 hover:underline after:content-[',_'] after:text-[initial] last:after:content-['']"
+            className="inline cursor-pointer !text-blue-600 hover:underline after:content-[',_'] after:text-[initial] last:after:content-['']"
           >
             {lexical}
           </p>

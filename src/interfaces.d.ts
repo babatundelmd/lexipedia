@@ -45,3 +45,8 @@ interface ErrorAPI {
   message: string;
   resolution: string;
 }
+
+interface ThemeContext {
+  prefersDarkMode: boolean;
+  setPrefersDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}

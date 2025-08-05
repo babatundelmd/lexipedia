@@ -3,17 +3,20 @@ import { FaPlayCircle } from 'react-icons/fa';
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import { HiSpeakerWave, HiSpeakerXMark } from 'react-icons/hi2';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import useDetectScroll, { Direction } from '@smakss/react-scroll-direction';
 
 import ROUTES from '../routes';
 import { showAlert } from '../utils';
 import Lexicals from '../components/Lexicals';
 import WordInfoSkeleton from '../components/WordInfoSkeleton';
+import WordInfoSearchbar from '../components/WordInfoSearchbar';
 
 const WordInfo = () => {
   const { HOME } = ROUTES;
 
   const { word } = useParams();
   const navigate = useNavigate();
+  const { scrollDir } = useDetectScroll();
   const [isPlaying, setIsPlaying] = useState(false);
   const [wordInfo, setWordInfo] = useState<WordInfo>();
 
@@ -87,8 +90,14 @@ const WordInfo = () => {
   };
 
   useEffect(() => {
-    if (word) fetchWordInfo(word);
-    else navigate(HOME);
+    if (!word) {
+      showAlert({ msg: 'Please enter a search term', bgColor: '#c00' });
+      navigate(HOME);
+      return;
+    }
+
+    clearWordInfo();
+    fetchWordInfo(word);
   }, [word]);
 
   useEffect(() => {
@@ -116,6 +125,12 @@ const WordInfo = () => {
 
   return (
     <div className='min-h-screen grid grid-cols-[20%_80%] grid-rows-[300px_1fr] text-primary'>
+      <WordInfoSearchbar
+        extraClasses={`fixed z-1 top-24 left-1/2 -translate-x-1/2 duration-300 ${
+          scrollDir === Direction.Down ? '-translate-y-30' : 'translate-y-0'
+        }`}
+      />
+
       <section className='relative px-8 h-75 flex items-center justify-between border-b col-start-1 col-end-3'>
         <h1 className='text-8xl px-10 capitalize'>{wordInfo.word}</h1>
 
@@ -125,9 +140,7 @@ const WordInfo = () => {
           className='group relative flex gap-4 items-center justify-center py-4 px-8 rounded-full border disabled:!cursor-not-allowed'
         >
           {specifiedPhonetics.audio ? null : (
-            <span className='shadow-md py-2 px-4 whitespace-nowrap opacity-0 absolute -bottom-12 -right-2 bg-white rounded-full duration-300 border group-hover:opacity-100'>
-              No audio available
-            </span>
+            <span className='btn-hover-alert'>No audio available</span>
           )}
           {specifiedPhonetics.audio ? (
             isPlaying ? (
@@ -161,16 +174,13 @@ const WordInfo = () => {
                   <li key={index} className='list-decimal list-inside'>
                     <p className='inline text-2xl'>{definition.definition}</p>
 
-                    <p
-                      hidden={!definition.example}
-                      className='mt-4 text-sm text-[rgba(255,255,255,0.5)]'
-                    >
+                    <p hidden={!definition.example} className='word-example'>
                       "{definition.example}"
                     </p>
 
-                    <Lexicals clearWordInfo={clearWordInfo} lexicals={synonyms} title='synonyms' />
+                    <Lexicals lexicals={synonyms} title='synonyms' />
 
-                    <Lexicals clearWordInfo={clearWordInfo} lexicals={antonyms} title='antonyms' />
+                    <Lexicals lexicals={antonyms} title='antonyms' />
                   </li>
                 ))}
               </ol>

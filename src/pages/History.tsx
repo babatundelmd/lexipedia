@@ -22,12 +22,12 @@ const History = () => {
           cachedWords.length && 'hidden'
         }`}
       >
-        <p hidden={cachedWords.length !== 0} className='text-xl'>
+        <p hidden={cachedWords.length !== 0} className='text-primary text-xl'>
           No words searched
         </p>
         <Link to={HOME} className='btn'>
           Make new search
-          <MdOutlineSearch />
+          <MdOutlineSearch className='md-outline-search' />
         </Link>
       </section>
 
@@ -36,7 +36,7 @@ const History = () => {
           <Link
             key={word}
             to={WORD_INFO.replace(':word', word)}
-            className='text-primary shrink-0 grow rounded px-4 py-5 whitespace-nowrap overflow-hidden text-ellipsis bg-white min-w-25 max-w-full h-16 border border-[rgba(0,0,0,0.15)] shadow-md text-center duration-400 hover:scale-103'
+            className='!text-primary text-xl shrink-0 grow rounded px-4 py-5 whitespace-nowrap overflow-hidden text-ellipsis bg-white min-w-50 max-w-full h-16 border border-[rgba(0,0,0,0.15)] shadow-md text-center duration-400 hover:scale-103'
           >
             {word}
           </Link>
