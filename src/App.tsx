@@ -4,7 +4,6 @@ import ROUTES from './routes';
 import MainLayout from './layouts';
 import History from './pages/History';
 import WordInfo from './pages/WordInfo';
-import Search from './pages/Search';
 
 const App = () => {
   const { HOME, HISTORY, WORD_INFO } = ROUTES;
