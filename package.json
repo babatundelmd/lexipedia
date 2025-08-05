@@ -11,6 +11,7 @@
     "sync-dev": "git fetch upstream && git checkout development && git merge upstream/development && git push origin development"
   },
   "dependencies": {
+    "@smakss/react-scroll-direction": "^4.2.0",
     "@tailwindcss/vite": "^4.1.11",
     "axios": "^1.11.0",
     "react": "^19.1.0",
