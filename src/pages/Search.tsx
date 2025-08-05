@@ -14,7 +14,7 @@ const Search: React.FC = () => {
 
   return (
     <div className="min-h-screen text-[#0a2f46] flex flex-col items-center justify-center px-4">
-      <h1 className="text-4xl font-semibold font-serif mb-6">📘 LEXIPEDIA</h1>
+      <h1 className="text-4xl font-medium font-serif mb-6">📘 Lexipedia</h1>
       <SearchBar onSearch={handleSearch} />
     </div>
   );
