@@ -14,8 +14,10 @@
 
 @theme {
   --color-primary: #0a2f46;
+  --color-content: #141414;
   --color-secondary: #748289;
-  --color-content: #141414; /* TODO: Should be changed later on */
+
+  --radius-half: 50%;
 }
 
 @keyframes shimmer-animation {
@@ -37,6 +39,26 @@
 
 .nav-link.selected {
   @apply text-white bg-primary;
+}
+
+.header {
+  @apply bg-white sticky top-0 z-10000 h-16 px-8 flex gap-4 items-center justify-between border-b shadow-xs border-[rgba(0,0,0,0.15)];
+}
+
+.word-example {
+  @apply mt-4 italic text-base;
+}
+
+.btn-hover-alert {
+  @apply shadow-md py-2 px-4 whitespace-nowrap opacity-0 absolute -bottom-12 right-0 bg-white rounded-full duration-300 border group-hover:opacity-100;
+}
+
+.search-bar input:valid {
+  @apply w-full px-4 border;
+}
+
+.search-bar:has(input:valid) {
+  @apply w-80 border;
 }
 
 a,
@@ -61,4 +83,73 @@ input:is([type='submit'], [type='checkbox']) {
     background-size: 200% 100%;
     animation: shimmer-animation 2s ease-in-out infinite;
   }
+}
+
+/* ================ From Uiverse.io by Creatlydev ================= */
+/* ================ THEME TOGGLE BUTTON STYLING ================= */
+
+.toggle {
+  @apply bg-white text-primary w-8 h-8 rounded-half grid place-items-center cursor-pointer border leading-none;
+}
+
+.toggle * {
+  @apply cursor-pointer;
+}
+
+.input {
+  @apply hidden;
+}
+
+.icon {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  @apply transition-transform duration-400 fill-primary;
+}
+
+.icon-moon {
+  @apply delay-200;
+}
+
+.icon-sun {
+  @apply scale-0;
+}
+
+#switch:checked + .icon-moon {
+  @apply rotate-360 scale-0;
+}
+
+#switch:checked ~ .icon-sun {
+  @apply delay-200 scale-100 rotate-360;
+}
+
+/* ================ DARK-MODE STYLING ================= */
+body[data-theme='dark'] {
+  @apply bg-content text-white;
+}
+
+body[data-theme='dark'] * {
+  @apply text-white;
+}
+body[data-theme='dark'] .header {
+  @apply bg-content border-[rgba(255,255,255,0.2)];
+}
+
+body[data-theme='dark'] .word-example {
+  @apply text-[rgba(255,255,255,0.7)];
+}
+
+body[data-theme='dark'] .nav-link.selected {
+  @apply bg-white !text-primary;
+}
+
+body[data-theme='dark'] .btn {
+  @apply bg-white text-primary;
+}
+
+body[data-theme='dark'] .md-outline-search {
+  @apply fill-primary;
+}
+
+body[data-theme='dark'] .btn-hover-alert {
+  @apply bg-content;
 }
