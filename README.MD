@@ -70,10 +70,10 @@ Lexipedia is ready to deploy on platforms like Vercel, Netlify, or your own serv
 
 ## Contributors
 
-- LAMIDI BABATUNDE (Project Manager)
-- ADENIJI FOWOYEMI
-- ADEYEMI AYODELE
-- EMEH MATTHEW
+- [LAMIDI BABATUNDE](https://github.com/babatundelmd) (Project Manger)
+- [ADENIJI FOWOYEMI](https://github.com/secondfo)
+- [ADEYEMI AYODELE](https://github.com/Adeyemi7)
+- [EMEH MATTHEW](https://github.com/matthewemeh)
 
 ## Contributing
 
