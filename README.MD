@@ -2,6 +2,8 @@
 
 Lexipedia is a modern web application for exploring word definitions, etymology, synonyms, and more. Built with React and Vite, it provides a fast and interactive dictionary experience.
 
+![Lexipedia_Home](https://lexipediaa.netlify.app/lexipedia-home.png)
+
 ## Features
 
 - **Word Search:** Quickly look up definitions, pronunciations, and etymology.
@@ -65,6 +67,13 @@ Lexipedia is ready to deploy on platforms like Vercel, Netlify, or your own serv
   - `utils.ts` — Utility functions
 - `public/` — Static files and icons
 - `index.html` — Main HTML file
+
+## Contributors
+
+- LAMIDI BABATUNDE (Project Manager)
+- ADENIJI FOWOYEMI
+- ADEYEMI AYODELE
+- EMEH MATTHEW
 
 ## Contributing
 
